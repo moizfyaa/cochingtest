@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
     public function dashboard()
     {
-        
-        return view('admin.dashboard');
+        $category_count = Category::get()->count();
+        $product_count = Product::get()->count();
+        $user_count = User::get()->count();
+        return view('admin.dashboard',compact('category_count','product_count','user_count'));
     }
 
     public function categories(Request $request)
