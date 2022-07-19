@@ -91,7 +91,7 @@
 <script>
     var xValues = ["Product", "Category", "User"];
     var yValues = ['{{ $product_count }}', '{{ $category_count }}', '{{ $user_count }}'];
-    var barColors = ["red", "green","blue","orange","brown"];
+    var barColors = ["blue", "blue","blue"];
 
 new Chart("myChart", {
   type: "bar",
